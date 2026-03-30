@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,6 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-white text-[#111] min-h-screen">
         {children}
+        <Analytics />
+        <SpeedInsights />
         <footer className="text-center py-8 text-sm text-gray-400 font-light">
           Pastelet — ephemeral text sharing
         </footer>
